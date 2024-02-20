@@ -1,0 +1,11 @@
+name: Release Notification
+on:
+  release:
+    types: [published]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Name: ${{ github.event.release.name }} Description: ${{ github.event.release.body }}"
