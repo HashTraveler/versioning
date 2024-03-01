@@ -46,7 +46,7 @@ jobs:
           MESSAGE="Bump package.json to $VERSION"
           SHA=$( git rev-parse $DESTINATION_BRANCH:$FILE_TO_COMMIT )
           CONTENT=$( base64 -i $FILE_TO_COMMIT )
-          gh api --method PUT /repos/:owner/:repo/contents/$FILE_TO_COMMIT \
+          gh api --method PUT \
           --field message="$MESSAGE" \
           --field branch="$DESTINATION_BRANCH" \
           --field sha="$SHA" \
