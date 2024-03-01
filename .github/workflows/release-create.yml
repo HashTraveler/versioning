@@ -34,7 +34,7 @@ jobs:
           git add -A
           git commit -m "Bump version to ${version}"
           git tag "v$version"
-          git push --tags
+          git push --set-upstream origin main --tags
       - name: Create new release branch
         run: |
           version=$(cat package.json | jq -r '.version')
