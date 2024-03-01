@@ -1,6 +1,6 @@
 {
   "name": "versioning",
-  "version": "18.2.0",
+  "version": "18.2.1",
   "description": "",
   "type": "module",
   "main": "index.js",
