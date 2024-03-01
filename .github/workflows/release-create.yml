@@ -36,7 +36,7 @@ jobs:
           git push
       - name: Detach new branch
         run: |
-          version = cat package.json | jq -r '.version'
+          version=$(cat package.json | jq -r '.version')
           echo $version
           git checkout -b "release/$version"
           git push --set-upstream origin "release/$version"
