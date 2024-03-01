@@ -46,8 +46,9 @@ jobs:
           export SHA=$( git rev-parse $DESTINATION_BRANCH:$FILE_TO_COMMIT )
           export CONTENT=$( base64 -i $FILE_TO_COMMIT )
           gh api --method PUT /repos/:owner/:repo/contents/$FILE_TO_COMMIT --field message="$MESSAGE" --field branch="$DESTINATION_BRANCH" --field content=@<( base64 -i $FILE_TO_COMMIT ) --field sha="$SHA"
-      - name: Tag the commit
+      - name: Pull and tag
         run: |
+          git reset --hard
           git pull
           version=$(cat package.json | jq -r '.version')
           git tag "v$version"
