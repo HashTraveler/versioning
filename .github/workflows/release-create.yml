@@ -1,4 +1,5 @@
 name: "Create Release"
+run-name: "Create ${{ inputs.version }} release"
 permissions:
   contents: write
 on:
