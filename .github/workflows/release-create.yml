@@ -26,7 +26,7 @@ jobs:
       - name: Configure git
         run: |
           git config --global user.name 'Github Actions'
-          git config --global user.email 'HashTraveler@users.noreply.github.com'
+          git config --global user.email 'habibitcoin@users.noreply.github.com'
       - name: Bump package.json version and tag
         run: |
           npm version ${{ inputs.version }} --no-git-tag-version
