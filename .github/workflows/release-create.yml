@@ -23,7 +23,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Configure git
         run: |
           git config --global user.name '${{github.actor}}'
@@ -48,9 +49,10 @@ jobs:
           --field encoding="base64" \
           --field branch="$DESTINATION_BRANCH" \
           --field sha="$SHA"
+      - name: Checkout after commit
+        uses: actions/checkout@v4
       - name: Tag the commit
         run: |
-          git pull
           git tag "v$version"
           git push --set-upstream origin main --tags
       - name: Create new release branch
