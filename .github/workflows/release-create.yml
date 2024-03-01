@@ -45,7 +45,6 @@ jobs:
       - name: Create draft release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ env.tag_name }}
         run: |
           version=$(cat package.json | jq -r '.version')
           gh release create "v$version" \
