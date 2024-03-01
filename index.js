@@ -26,6 +26,8 @@ const checkProductVersion = async () => {
   } else {
     console.log(boxMessage(chalk.green('You are using the latest version!')));
   }
+
+  // Do a small change
 }
 
 void checkProductVersion();
